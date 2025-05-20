@@ -33,11 +33,8 @@ class VerificarEdad
         }
 
         // obtener la edad valida
-        $edad = (int)$request->input('edad');
+        $edad = (int)filter_var($request->input('edad'), FILTER_SANITIZE_NUMBER_INT);
 
-        if ($edad < 0 || $edad > 120) {
-            return response()->view('error.index', ['message' => 'La edad debe estar entre 0 y 120 años.'], 400);
-        }
         //registrar la edad en la base de datos
         try {
             AgeLog::create([

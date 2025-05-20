@@ -4,22 +4,22 @@
         <div class="col-md-8 col-lg-6">
             <div class="card shadow-sm border-0">
                 <div class="card-header bg-primary text-white">
-                    <h3 class="mb-0">Formulario de Edad</h3>
+                    <h3 class="mb-0">Edad</h3>
                 </div>
                 <div class="card-body p-4">
                     <form action="{{ route('formEdad.enviar')}}" method="POST" class="needs-validation" novalidate>
                         @csrf
                         <div class="mb-4">
-                            <label for="edad" class="form-label fw-bold">Edad: </label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="bi bi-calendar3"></i></span>
                                 <input
                                     type="number"
+                                    step="1"
                                     class="form-control form-control-lg"
                                     name="edad"
                                     id="edad"
                                     aria-describedby="helpId"
-                                    placeholder="0-120"
+                                    placeholder="ej: 30"
                                     min="0"
                                     max="120"
                                     required

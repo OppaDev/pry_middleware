@@ -1,0 +1,263 @@
+/* public/css/style.css */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4; /* Color de fondo general, ajústalo */
+    color: #333;
+}
+
+/* Sub Header */
+.sub-header {
+    background-color: #1f272f; /* Color oscuro como en la plantilla */
+    padding: 10px 0;
+    font-size: 14px;
+    color: #fff;
+}
+.sub-header .left-content p {
+    margin: 0;
+    line-height: 20px; /* Ajuste para que no se corte el texto */
+}
+.sub-header .left-content em {
+    font-style: normal;
+    color: #f5a425; /* Color de acento, ajusta */
+}
+.sub-header .right-icons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+.sub-header .right-icons ul li {
+    display: inline-block;
+    margin-left: 10px;
+}
+.sub-header .right-icons ul li a {
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+.sub-header .right-icons ul li a:hover {
+    color: #f5a425; /* Color de acento al pasar el mouse */
+}
+
+
+/* Header Area */
+.header-area {
+    background-color: #2c353c; /* Color de fondo principal del header, ajusta */
+    padding: 0px 0; /* La plantilla original puede tener padding 0 y manejarlo internamente */
+    position: sticky; /* Hacer que el header se quede fijo arriba */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-area .logo {
+    float: left;
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    line-height: 80px; /* Alinea verticalmente con los items del menú, ajusta esto */
+    text-transform: uppercase;
+}
+
+.header-area .main-nav {
+    min-height: 80px; /* Altura del header, ajusta */
+    background: transparent;
+}
+
+.header-area .main-nav .nav {
+    float: right;
+    margin-top: 25px; /* Ajusta para alinear verticalmente */
+    list-style: none;
+}
+
+.header-area .main-nav .nav li {
+    display: inline-block;
+    margin-left: 20px; /* Espacio entre items */
+}
+
+.header-area .main-nav .nav li a {
+    display: block;
+    font-weight: 500;
+    font-size: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 15px; /* Padding para los links */
+    transition: all 0.3s ease 0s;
+    height: 40px;
+    line-height: 20px;
+    border: transparent;
+    letter-spacing: 1px;
+}
+
+.header-area .main-nav .nav li a.active,
+.header-area .main-nav .nav li a:hover {
+    color: #f5a425; /* Color de acento para el item activo o hover */
+    /* background-color: #fff; /* Ejemplo de fondo para el activo */
+    /* border-radius: 5px; */
+}
+
+/* Estilos para el menú hamburguesa (básico) */
+.header-area .main-nav .menu-trigger {
+    cursor: pointer;
+    display: none; /* Oculto en desktop */
+    position: absolute;
+    top: 23px;
+    right: 30px;
+    width: 36px;
+    height: 35px;
+    z-index: 100;
+    /* Estilos para el ícono de hamburguesa */
+}
+.header-area .main-nav .menu-trigger span,
+.header-area .main-nav .menu-trigger span:before,
+.header-area .main-nav .menu-trigger span:after {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    left:0;
+    transition: all 0.3s;
+}
+.header-area .main-nav .menu-trigger span:before {
+    content: '';
+    top: -10px;
+}
+.header-area .main-nav .menu-trigger span:after {
+    content: '';
+    bottom: -10px;
+}
+
+
+/* Media query para el menú móvil */
+@media (max-width: 991px) {
+    .header-area .main-nav .nav {
+        display: none; /* Oculta el menú normal */
+        /* Aquí irían los estilos para mostrar el menú desplegable */
+    }
+    .header-area .main-nav .menu-trigger {
+        display: block; /* Muestra el trigger */
+    }
+    .header-area .logo {
+        line-height: 60px; /* Ajusta si la altura del header cambia en móvil */
+    }
+     .header-area .main-nav {
+        min-height: 60px;
+    }
+    .sub-header .left-content,
+    .sub-header .right-icons {
+        text-align: center;
+    }
+    .sub-header .right-icons ul {
+        margin-top: 10px;
+    }
+}
+
+
+/* Main Content Area */
+main {
+    padding-top: 20px; /* Espacio para que no quede debajo del header fijo */
+    padding-bottom: 60px; /* Espacio antes del footer */
+    min-height: calc(100vh - 200px); /* Ejemplo para que el footer quede abajo si hay poco contenido, ajusta los 200px */
+}
+
+/* Footer */
+footer {
+    background-color: #1f272f; /* Color oscuro como en la plantilla */
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer .copyright-text p {
+    margin: 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+footer .copyright-text a {
+    color: #f5a425; /* Color de acento para el enlace */
+    text-decoration: none;
+}
+footer .copyright-text a:hover {
+    color: #fff;
+}
+
+/* Clases de utilidad de la plantilla (Ejemplos) */
+.section-heading h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1f272f; /* Título oscuro */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.main-button-red a { /* Estilo de botón rojo como en la plantilla */
+    font-size: 13px;
+    color: #fff;
+    background-color: #a12c2f; /* Rojo oscuro de la plantilla */
+    padding: 12px 30px;
+    display: inline-block;
+    border-radius: 22px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all .3s;
+    text-decoration: none;
+}
+
+.main-button-red a:hover {
+    background-color: #f5a425; /* Naranja de acento al pasar el mouse */
+}
+
+/* Ajustes para las vistas que creaste */
+.card-header.bg-primary { /* Sobrescribe el azul de Bootstrap si quieres el color de la plantilla */
+    background-color: #a12c2f !important; /* El color rojo de la plantilla */
+}
+.btn-primary { /* Sobrescribe el azul de Bootstrap si quieres el color de la plantilla */
+    background-color: #a12c2f !important;
+    border-color: #a12c2f !important;
+}
+.btn-primary:hover {
+    background-color: #f5a425 !important;
+    border-color: #f5a425 !important;
+}
+.btn-outline-primary {
+    color: #a12c2f !important;
+    border-color: #a12c2f !important;
+}
+.btn-outline-primary:hover {
+    color: #fff !important;
+    background-color: #a12c2f !important;
+    border-color: #a12c2f !important;
+}
+
+.alert-info {
+    background-color: #eef5fc; /* Un azul claro, puedes ajustarlo */
+    border-color: #d4e8fa;
+    color: #0c5460; /* Texto oscuro para contraste */
+}
+.alert-info .alert-heading {
+    color: #0c5460;
+}
+
+
+/* Ejemplo de cómo podrías usar un fondo de imagen para una sección tipo "hero" */
+
+.hero-section {
+    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('https://wallpapers.com/images/hd/orange-human-anatomy-hd-medical-5y3off7hmqi1octo.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 150px 0;
+    text-align: center;
+    color: #fff;
+}
+.hero-section h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+.hero-section p {
+    font-size: 20px;
+}
