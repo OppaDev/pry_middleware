@@ -16,12 +16,4 @@ class EdadController extends Controller
     {
         return view('formEdad.formEdad');
     }
-
-    public function enviarEdad(Request $request)
-    {
-        //validacion de edad entre 0 y 120
-        $validatedData = $request->validate([
-            'edad' => 'required|integer|min:0|max:120',
-        ]);
-    }
 }
