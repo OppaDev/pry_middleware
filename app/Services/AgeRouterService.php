@@ -26,7 +26,7 @@ class AgeRouterService
             return 'adulto.index';
         } elseif ($edad >= 60 && $edad <= 74) {
             return 'mayor.index';
-        } elseif ($edad >= 75) {
+        } elseif ($edad >= 75 && $edad <= 120) {
             return 'longevo.index';
         } else {
             return null; // Edad no válida

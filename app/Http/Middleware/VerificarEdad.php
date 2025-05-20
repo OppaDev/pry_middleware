@@ -24,12 +24,13 @@ class VerificarEdad
     
     public function handle(Request $request, Closure $next): Response
     {
-        // obtener la edad valida
-        $edad = (int)$request->input('edad');
-
+        
         if (!$request -> filled('edad') || !is_numeric($request -> input('edad'))){
             return response() -> view('error.index', ['message' => 'La edad no es válida.'], 400);
         }
+
+        // obtener la edad valida
+        $edad = (int)$request->input('edad');
 
         //registrar la edad en la base de datos
         try {
