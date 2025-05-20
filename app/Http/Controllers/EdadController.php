@@ -18,6 +18,5 @@ class EdadController extends Controller
     {
 
         $edad = $request->input('edad');
-        return view('formEdad.formEdad', ['edad' => $edad]);
     }
 }
