@@ -4,7 +4,6 @@ use App\Http\Controllers\AdolescenteController;
 use App\Http\Controllers\AdultoController;
 use App\Http\Controllers\BebeController;
 use App\Http\Controllers\EdadController;
-use App\Http\Controllers\ErrorController;
 use App\Http\Controllers\JovenController;
 use App\Http\Controllers\LongevoController;
 use App\Http\Controllers\MayorController;
@@ -30,4 +29,4 @@ Route::get('/mayores', [MayorController::class, 'index']) -> name('mayor.index')
 Route::get('/longevos', [LongevoController::class, 'index']) -> name('longevo.index');
 
 //ruta error
-Route::get('/error', [ErrorController::class, 'index']) -> name('error.index');
+Route::get('/error', function () { return view('error.index');})->name('error.index');
