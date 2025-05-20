@@ -1,1 +1,4 @@
-<h1>ADULTO</h1>
+@extends('app')
+@section('content')
+    <h1>ADULTO</h1>
+@endsection

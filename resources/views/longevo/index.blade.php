@@ -1,1 +1,4 @@
-<h1>LONGEVO</h1>
+@extends('app')
+@section('content')
+    <h1>LONGEVO</h1>
+@endsection

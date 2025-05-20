@@ -1,3 +1,4 @@
+@extends('app')
 @section('content')
     <div class="container mt-5">
     <div class="alert alert-danger text-center">
@@ -11,7 +12,7 @@
         </p>
         <hr>
         <p class="mb-0">
-            <a href="{{ route('formEdad') }}" class="btn btn-primary">Volver al formulario</a>
+            <a href="{{ route('welcome') }}" class="btn btn-primary">Volver</a>
         </p>
     </div>
 </div>
