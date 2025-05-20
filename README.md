@@ -84,12 +84,6 @@ php artisan serve
 4. El usuario es redirigido automáticamente a la sección correspondiente a su edad
 5. La edad es registrada en la base de datos para análisis estadístico
 
-## Principios de Desarrollo Aplicados
-
-- **Single Responsibility Principle**: Cada clase tiene una única responsabilidad
-- **Open/Closed Principle**: Extensible mediante interfaces
-- **Dependency Injection**: Uso de la inyección de dependencias de Laravel
-- **Separation of Concerns**: Middleware, servicios y controladores tienen funciones específicas
 
 ## Seguridad
 
