@@ -20,7 +20,7 @@ Route::get('/formEdad', [EdadController::class, 'index']) -> name('formEdad');
 Route::post('/formEdad', function(){}) -> name('formEdad.enviar') -> middleware(VerificarEdad::class);
 
 //rutas destino de edades
-Route::prefix('contenido') -> group(function () {
+Route::prefix('salud') -> group(function () {
     Route::get('/bebes', [BebeController::class, 'index']) -> name('bebe.index');
     Route::get('/ninos', [NinoController::class, 'index']) -> name('nino.index');
     Route::get('/adolescentes', [AdolescenteController::class, 'index']) -> name('adolescente.index');
