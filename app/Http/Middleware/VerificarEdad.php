@@ -8,7 +8,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Response;
-
+use Illuminate\Support\Facades\Validator;
 
 class VerificarEdad
 {
@@ -32,6 +32,9 @@ class VerificarEdad
         // obtener la edad valida
         $edad = (int)$request->input('edad');
 
+        if ($edad < 0 || $edad > 120) {
+            return response()->view('error.index', ['message' => 'La edad debe estar entre 0 y 120 años.'], 400);
+        }
         //registrar la edad en la base de datos
         try {
             AgeLog::create([
