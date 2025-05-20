@@ -24,9 +24,12 @@ class VerificarEdad
     
     public function handle(Request $request, Closure $next): Response
     {
+        $validator = Validator::make($request->all(), [
+            'edad' => 'required|numeric|integer|min:0|max:120',
+        ]);
         
-        if (!$request -> filled('edad') || !is_numeric($request -> input('edad'))){
-            return response() -> view('error.index', ['message' => 'La edad no es válida.'], 400);
+        if ($validator -> fails()) {
+            return response()->view('error.index', ['message' => 'La edad debe ser un número entero entre 0 y 120.'], 400);
         }
 
         // obtener la edad valida
