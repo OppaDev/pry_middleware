@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AgeLog;
-use App\Http\Middleware\VerificarEdad;
+
 
 
 use Illuminate\Http\Request;
@@ -24,10 +23,5 @@ class EdadController extends Controller
         $validatedData = $request->validate([
             'edad' => 'required|integer|min:0|max:120',
         ]);
-
-        // Guardar la edad en la base de datos
-        $edad = new AgeLog();
-        $edad -> edad = $request -> edad;
-        $edad -> save();
     }
 }

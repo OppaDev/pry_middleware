@@ -8,7 +8,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\Validator;
+
 
 class VerificarEdad
 {
@@ -24,13 +24,12 @@ class VerificarEdad
     
     public function handle(Request $request, Closure $next): Response
     {
-        //validacion de edad este presente y sea un entero
-        $validator = Validator::make($request->all(), [
-            'edad' => 'required|integer',
-        ]);
-
         // obtener la edad valida
         $edad = (int)$request->input('edad');
+
+        if (!$request -> filled('edad') || !is_numeric($request -> input('edad'))){
+            return response() -> view('error.index', ['message' => 'La edad no es válida.'], 400);
+        }
 
         //registrar la edad en la base de datos
         try {
