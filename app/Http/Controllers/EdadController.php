@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AgeLog;
+use App\Http\Middleware\VerificarEdad;
 
 
 use Illuminate\Http\Request;
@@ -20,7 +21,7 @@ class EdadController extends Controller
     public function enviarEdad(Request $request)
     {
         //validacion de edad entre 0 y 120
-        $validarEdad = $request->validate([
+        $validatedData = $request->validate([
             'edad' => 'required|integer|min:0|max:120',
         ]);
 
